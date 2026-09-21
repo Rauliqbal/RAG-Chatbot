@@ -4,6 +4,7 @@ from uuid import uuid4
 
 from app.schemas.document import DocumentUploadResponse
 from app.services.document_service import extract_text_from_pdf
+from app.services.ingestion import ingest_document
 
 router = APIRouter( 
   prefix="/api/v1/document",
@@ -40,14 +41,26 @@ async def upload_document (
 
   file_path.write_bytes(content)
 
-  text, pages = extract_text_from_pdf(
-        str(file_path)
-    )
+  # text, pages = extract_text_from_pdf(
+  #       str(file_path)
+  #   )
+  
+  result = ingest_document(
+    file_path=str(file_path),
+    filename=filename
+  )
+  
+  return {
+    "filename": result["filename"],
+    "pages": result["pages"],
+    "chunks": result["chunks"],
+    "message": "Document indexed successfully",
+  }
 
-  return DocumentUploadResponse(
-        filename=filename,
-        pages=pages,
-        characters=len(text),
-        preview=text[:1000],
-        message="Document uploaded successfully",
-    )
+  # return DocumentUploadResponse(
+  #       filename=filename,
+  #       pages=pages,
+  #       characters=len(text),
+  #       preview=text[:1000],
+  #       message="Document uploaded successfully",
+  #   )
