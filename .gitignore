@@ -1,0 +1,78 @@
+# Python
+pycache/
+*.py[cod]
+*$py.class
+*.so
+
+# Python Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ENV
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type Checking / Linters
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+
+# RAG / AI Data
+data/documents/*
+!data/documents/.gitkeep
+
+# Vector database
+data/chroma/
+chroma/
+.chroma/
+
+# Generated embeddings / indexes
+data/embeddings/
+data/indexes/
+
+# Model/cache files
+models/
+.cache/
+.huggingface/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Local development
+*.local

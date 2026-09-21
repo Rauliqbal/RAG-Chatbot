@@ -14,3 +14,9 @@ def root():
     "message" : "JunetAI is online"
   }
   
+  
+@app.get('/health')
+def health():
+  return {
+    "status" : "im fine"
+  }
