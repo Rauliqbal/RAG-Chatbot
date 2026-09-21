@@ -319,7 +319,7 @@ The main learning goals are:
 - ✅ Step 2  API structure
 - ✅ Step 3  Request/Response schema
 - ✅ Step 4  Service layer
-- ⬜ Step 5  LLM integration
+- ✅ Step 5  Local LLM
 - ⬜ Step 6  PDF upload API
 - ⬜ Step 7  PDF text extraction
 - ⬜ Step 8  Chunking
