@@ -48,5 +48,6 @@ async def upload_document (
         filename=filename,
         pages=pages,
         characters=len(text),
+        preview=text[:1000],
         message="Document uploaded successfully",
     )
